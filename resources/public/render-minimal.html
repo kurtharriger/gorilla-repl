@@ -5,6 +5,8 @@
   ~ gorilla-repl is licenced to you under the MIT licence. See the file LICENCE.txt for full details.
   -->
 
+<!-- This file is a minimal version of the Gorilla REPL viewer, which is used for static HTML export. -->
+
 <html id="document">
 <head>
     <link href='http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic|Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
@@ -41,7 +43,7 @@
 </head>
 <body>
 
-<div id="contents" data-bind="css: {veiled: copyBoxVisible}">
+<div id="contents">
     <div class="segment container-segment">
         <div class="container-children">
             <div data-bind="template: {name: 'segment-template', foreach: worksheet().segments()}">
@@ -59,7 +61,7 @@
     <div class="segment code">
 
         <div class="segment-main">
-            <pre class="static-code clojure"><code data-bind="text: contents"></pre></code>
+            <pre class="static-code clojure"><code data-bind="text: contents"></code></pre>
         </div>
         <div class="error-text" data-bind="text: errorText, visible: errorText() !== ''"></div>
         <div class="console-text" data-bind="visible: consoleText() !== ''">
