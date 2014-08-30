@@ -18,6 +18,8 @@
                  [org.clojure/data.codec "0.1.0"]
                  [javax.servlet/servlet-api "2.5"]
                  [grimradical/clj-semver "0.2.0" :exclusions [org.clojure/clojure]]]
+  :plugins [[lein-npm "0.4.0"]]
+  :node-dependencies [[gorilla-web "0.0.1"]]
   :main ^:skip-aot gorilla-repl.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all}})
