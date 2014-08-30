@@ -28,10 +28,17 @@
     (println (:params request))
     (handler request)))
 
+(defn wrap-cors-headers [handler]
+  (fn [request]
+    (-> (handler request)
+        (assoc-in [:headers "Access-Control-Allow-Origin"] "*")
+        (assoc-in [:headers "Access-Control-Allow-Methods"] "GET POST PUT"))))
+
 ;; a wrapper for JSON API calls
 (defn wrap-api-handler
   [handler]
   (-> handler
+      (wrap-cors-headers)
       (keyword-params/wrap-keyword-params)
       (params/wrap-params)
       (json/wrap-json-response)))
@@ -84,6 +91,7 @@
 ;; the combined routes - we serve up everything in the "public" directory of resources under "/".
 ;; The REPL traffic is handled in the websocket-transport ns.
 (defroutes app-routes
+           (OPTIONS "*" [] (wrap-api-handler {}))
            (GET "/load" [] (wrap-api-handler load-worksheet))
            (POST "/save" [] (wrap-api-handler save))
            (GET "/completions" [] (wrap-api-handler completions))
