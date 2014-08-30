@@ -3,13 +3,6 @@
 Gorilla is a rich REPL for Clojure in the notebook style. If you're interested you should take a look at its
 [website](http://gorilla-repl.org).
 
-## Running
-
-```
-lien npm install
-lien run
-```
-
 ## Contributing
 
 Contributions, in the form of comments, criticism, bug reports, or code are all very welcome :-) If you've got an idea
