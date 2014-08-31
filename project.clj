@@ -19,7 +19,7 @@
                  [javax.servlet/servlet-api "2.5"]
                  [grimradical/clj-semver "0.2.0" :exclusions [org.clojure/clojure]]]
   :plugins [[lein-npm "0.4.0"]]
-  :node-dependencies [[gorilla-web "0.0.2"]]
+  :node-dependencies [[gorilla-web "0.0.4"]]
   :resource-paths ["node_modules/gorilla-web", "resources"]
   :aliases {"run" ["do" "npm" "install," "run"]
             "jar" ["do" "npm" "install," "jar"]}
