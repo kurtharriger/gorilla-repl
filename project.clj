@@ -17,7 +17,9 @@
                  [gorilla-renderable "1.0.0"]
                  [org.clojure/data.codec "0.1.0"]
                  [javax.servlet/servlet-api "2.5"]
-                 [grimradical/clj-semver "0.2.0" :exclusions [org.clojure/clojure]]]
+                 [grimradical/clj-semver "0.2.0" :exclusions [org.clojure/clojure]]
+                 [im.chit/vinyasa  "0.2.2"]]
+               
   :plugins [[lein-npm "0.4.0"]]
   :node-dependencies [[gorilla-web "0.0.10"]]
   :resource-paths ["node_modules/gorilla-web", "resources"]
