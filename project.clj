@@ -21,7 +21,7 @@
                  [im.chit/vinyasa  "0.2.2"]]
                
   :plugins [[lein-npm "0.4.0"]]
-  :node-dependencies [[gorilla-web "0.0.10"]]
+  :node-dependencies [[gorilla-web "0.1.0"]]
   :resource-paths ["node_modules/gorilla-web", "resources"]
   :aliases {"run" ["do" "npm" "install," "run"]
             "jar" ["do" "npm" "install," "jar"]}
